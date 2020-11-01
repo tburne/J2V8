@@ -234,11 +234,20 @@ abstract public class V8Value implements Releasable {
         return v8.isWeak(v8.getV8RuntimePtr(), getHandle());
     }
 
+    private boolean preventRelease;
+
+    public void preventRelease() {
+        preventRelease = true;
+    }
+
     /**
      * Releases the native resources associated with this V8Value.
      */
     @Override
     public void release() {
+        if (preventRelease) {
+            return;
+        }
         v8.checkThread();
         if (!released) {
             try {
