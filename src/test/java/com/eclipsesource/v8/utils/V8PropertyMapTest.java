@@ -303,6 +303,7 @@ public class V8PropertyMapTest {
         assertEquals("foo", map.get("null"));
     }
 
+    @SuppressWarnings("unlikely-arg-type")
     @Test
     public void testPropertyMapEntrySetWithNulls() {
         V8PropertyMap<Object> map = new V8PropertyMap<Object>();
@@ -320,6 +321,7 @@ public class V8PropertyMapTest {
         entrySet.contains(3);
     }
 
+    @SuppressWarnings("unlikely-arg-type")
     @Test
     public void testPropertyMapEntrySetWithSelf() {
         V8PropertyMap<Object> map = new V8PropertyMap<Object>();

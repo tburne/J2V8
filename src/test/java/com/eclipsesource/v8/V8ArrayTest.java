@@ -728,7 +728,8 @@ public class V8ArrayTest {
 
     @Test
     public void testGenericPushInteger() {
-        V8Array array = new V8Array(v8).push(new Integer(7));
+        Integer i = (7);
+        V8Array array = new V8Array(v8).push(i);
 
         assertEquals(7, array.get(0));
         array.release();
@@ -736,7 +737,7 @@ public class V8ArrayTest {
 
     @Test
     public void testGenericPushDouble() {
-        V8Array array = new V8Array(v8).push(new Double(7.7777));
+        V8Array array = new V8Array(v8).push((Double) (7.7777));
 
         assertEquals(7.7777, (Double) array.get(0), 0.0001);
         array.release();
@@ -744,7 +745,7 @@ public class V8ArrayTest {
 
     @Test
     public void testGenericPushBoolean() {
-        V8Array array = new V8Array(v8).push(new Boolean(true));
+        V8Array array = new V8Array(v8).push((Boolean) (true));
 
         assertTrue((Boolean) array.get(0));
         array.release();
@@ -778,7 +779,8 @@ public class V8ArrayTest {
 
     @Test
     public void testGenericPushFloat() {
-        V8Array array = new V8Array(v8).push(new Float(3.14));
+        Float f = (3.14f);
+        V8Array array = new V8Array(v8).push(f);
 
         assertEquals(3.14, (Double) array.get(0), 0.0001);
         array.release();

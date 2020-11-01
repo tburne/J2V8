@@ -235,6 +235,7 @@ public class V8CallbackTest {
         verify(callback).stringMethodNoParameters();
     }
 
+    @SuppressWarnings("deprecation")
     @Test
     public void testCallbackWithFunctionInParameterList() {
         ICallback callback = mock(ICallback.class);
@@ -245,6 +246,7 @@ public class V8CallbackTest {
         verify(callback).voidMethodWithObjectParameter(isNotNull(V8Function.class));
     }
 
+    @SuppressWarnings("deprecation")
     @Test
     public void testCallbackWithExplicitFunctionInParameterList() {
         ICallback callback = mock(ICallback.class);
@@ -295,6 +297,7 @@ public class V8CallbackTest {
         verify(callback).voidMethodStringVarArgs(eq("bar"));
     }
 
+    @SuppressWarnings("deprecation")
     @Test
     public void testCallbackV8ObjectVarArgs() {
         ICallback callback = mock(ICallback.class);
@@ -306,6 +309,7 @@ public class V8CallbackTest {
         verify(callback).voidMethodV8ObjectVarArgs(notNull(V8Object.class));
     }
 
+    @SuppressWarnings("deprecation")
     @Test
     public void testCallbackV8ArrayVarArgs() {
         ICallback callback = mock(ICallback.class);

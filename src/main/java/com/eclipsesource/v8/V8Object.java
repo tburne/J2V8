@@ -399,15 +399,15 @@ public class V8Object extends V8Value {
                 } else if (object instanceof V8Value) {
                     parameterArray.push((V8Value) object);
                 } else if (object instanceof Integer) {
-                    parameterArray.push((Integer) object);
+                    parameterArray.push(object);
                 } else if (object instanceof Double) {
-                    parameterArray.push((Double) object);
+                    parameterArray.push(object);
                 } else if (object instanceof Long) {
                     parameterArray.push(((Long) object).doubleValue());
                 } else if (object instanceof Float) {
                     parameterArray.push(((Float) object).floatValue());
                 } else if (object instanceof Boolean) {
-                    parameterArray.push((Boolean) object);
+                    parameterArray.push(object);
                 } else if (object instanceof String) {
                     parameterArray.push((String) object);
                 } else {
@@ -488,6 +488,7 @@ public class V8Object extends V8Value {
      *
      * @return The receiver.
      */
+    @SuppressWarnings("unlikely-arg-type")
     public V8Object add(final String key, final String value) {
         v8.checkThread();
         checkReleased();

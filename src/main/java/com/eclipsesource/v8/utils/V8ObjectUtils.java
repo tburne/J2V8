@@ -581,7 +581,7 @@ public class V8ObjectUtils {
         } else if (value instanceof Integer) {
             result.push(value);
         } else if (value instanceof Long) {
-            result.push(new Double((Long) value));
+            result.push(((Long) value).doubleValue());
         } else if (value instanceof Double) {
             result.push(value);
         } else if (value instanceof Float) {

@@ -256,6 +256,7 @@ public class V8ObjectUtilsTest {
         object.release();
     }
 
+    @SuppressWarnings("unlikely-arg-type")
     @Test
     public void testCreateMapWithNulls() {
         V8Object object = v8.executeObjectScript("x = {a:null}; x;");
@@ -714,21 +715,23 @@ public class V8ObjectUtilsTest {
 
     @Test
     public void testGetV8ResultInteger() {
-        Object result = V8ObjectUtils.getV8Result(v8, new Integer(77));
-
+        Integer i = (77);
+        Object result = V8ObjectUtils.getV8Result(v8, i);
         assertEquals(77, result);
     }
 
     @Test
     public void testGetV8ResultDouble() {
-        Object result = V8ObjectUtils.getV8Result(v8, new Double(77.7));
+        Double d = (77.7);
+        Object result = V8ObjectUtils.getV8Result(v8, d);
 
         assertEquals(77.7, result);
     }
 
     @Test
     public void testGetV8ResultFloat() {
-        Object result = V8ObjectUtils.getV8Result(v8, new Float(77.7));
+        Float f = (77.7f);
+        Object result = V8ObjectUtils.getV8Result(v8, f);
 
         assertEquals(77.7f, result);
     }
@@ -2238,7 +2241,7 @@ public class V8ObjectUtilsTest {
         object.release();
     }
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "unlikely-arg-type" })
     @Test
     public void testCreateMapWithNulls_GetValue() {
         V8Object object = v8.executeObjectScript("x = {a:null}; x;");

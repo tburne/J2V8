@@ -509,6 +509,7 @@ public class V8Array extends V8Object {
      *
      * @return The receiver.
      */
+    @SuppressWarnings("unlikely-arg-type")
     public V8Array push(final String value) {
         v8.checkThread();
         checkReleased();
