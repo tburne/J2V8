@@ -1,5 +1,5 @@
 # sys_image can be overridden from the CLI
-ARG sys_image=microsoft/windowsservercore:latest
+ARG sys_image=mcr.microsoft.com/windows/servercore:ltsc2019
 
 FROM $sys_image
 
