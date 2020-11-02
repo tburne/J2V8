@@ -23,11 +23,14 @@ RUN ./install.jdk.sh
 
 COPY ./shared/install.maven.sh /temp/docker/shared
 RUN ./install.maven.sh
-ENV PATH "$PATH:/opt/apache-maven-3.5.0/bin"
+ENV PATH "$PATH:/opt/apache-maven-3.6.3/bin"
 
 COPY ./shared/install.cmake.sh /temp/docker/shared
 RUN ./install.cmake.sh
 ENV PATH "$PATH:/opt/cmake/bin"
+
+RUN mkdir /temp/target
+COPY ./target/* /temp/target/
 
 # download the most critical maven dependencies for the build beforehand
 COPY ./shared/pom.xml /temp

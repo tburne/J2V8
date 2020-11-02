@@ -26,17 +26,17 @@ SCRIPT
 
 $provision_maven = <<SCRIPT
 echo Downloading Maven...
-curl http://www-eu.apache.org/dist/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz -O
+curl https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz -O
 
 echo Installing Maven...
-sudo tar xzvf apache-maven-3.5.0-bin.tar.gz -C /opt/
-sudo chmod -R 777 /opt/apache-maven-3.5.0
+sudo tar xzvf apache-maven-3.6.3-bin.tar.gz -C /opt/
+sudo chmod -R 777 /opt/apache-maven-3.6.3
 SCRIPT
 
 $provision_env = <<SCRIPT
 echo Setting up environment variables...
 echo "export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home" >> /Users/vagrant/.bash_profile
-echo "export PATH=/opt/apache-maven-3.5.0/bin:$PATH" >> /Users/vagrant/.bash_profile
+echo "export PATH=/opt/apache-maven-3.6.3/bin:$PATH" >> /Users/vagrant/.bash_profile
 SCRIPT
 
 fs_type = ENV['VAGRANT_FILE_SHARE_TYPE'] || "nfs"
