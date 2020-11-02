@@ -29,8 +29,6 @@ COPY ./shared/install.cmake.sh /temp/docker/shared
 RUN ./install.cmake.sh
 ENV PATH "$PATH:/opt/cmake/bin"
 
-ADD ./src /temp/src
-
 # download the most critical maven dependencies for the build beforehand
 COPY ./shared/pom.xml /temp
 WORKDIR /temp
