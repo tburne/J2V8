@@ -248,6 +248,10 @@ abstract public class V8Value implements Releasable {
         if (preventRelease) {
             return;
         }
+        forceRelease();
+    }
+
+    public void forceRelease() {
         v8.checkThread();
         if (!released) {
             try {
